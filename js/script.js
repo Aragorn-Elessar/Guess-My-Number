@@ -1,5 +1,8 @@
 'use strict';
 
+const randomNumber = Math.trunc(Math.random() * 20) + 1;
+document.querySelector('.number').textContent = randomNumber;
+
 // Handle user guessed number input
 document.querySelector('.check').addEventListener('click', function () {
   // Grab the guessed number
