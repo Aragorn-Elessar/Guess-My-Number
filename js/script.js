@@ -7,10 +7,15 @@ document.querySelector('.number').textContent = randomNumber;
 document.querySelector('.check').addEventListener('click', function () {
   // Grab the guessed number
   const guess = Number(document.querySelector('.guess').value);
-  console.log(guess, typeof guess);
 
   // Notify user if a zero value or no number entered
   if (!guess) {
     document.querySelector('.message').textContent = '⛔️ No number!';
+  } else if (guess === randomNumber) {
+    document.querySelector('.message').textContent = '🎉 Correct Number!';
+  } else if (guess > randomNumber) {
+    document.querySelector('.message').textContent = '📈 Too high!';
+  } else if (guess < randomNumber) {
+    document.querySelector('.message').textContent = '📉 Too low!';
   }
 });
