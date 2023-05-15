@@ -12,16 +12,24 @@ document.querySelector('.check').addEventListener('click', function () {
   // Notify user if a zero value or no number entered
   if (!guess) {
     document.querySelector('.message').textContent = '⛔️ No number!';
+
+    // When player wins
   } else if (guess === randomNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number!';
+
+    // When guess is too high
   } else if (guess > randomNumber && score > 1) {
     document.querySelector('.message').textContent = '📈 Too high!';
     score--;
     document.querySelector('.score').textContent = score;
+
+    // When guess is too low
   } else if (guess < randomNumber && score > 1) {
     document.querySelector('.message').textContent = '📉 Too low!';
     score--;
     document.querySelector('.score').textContent = score;
+
+    // When the score reaches zero
   } else {
     document.querySelector('.score').textContent = 0;
     document.querySelector('.message').textContent = '💥 You lost the game!';
