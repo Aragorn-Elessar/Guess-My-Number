@@ -1,6 +1,6 @@
 'use strict';
 
-const randomNumber = Math.trunc(Math.random() * 20) + 1;
+let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 
 // Handle user guessed number input
@@ -37,4 +37,18 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.score').textContent = 0;
     document.querySelector('.message').textContent = '💥 You lost the game!';
   }
+});
+
+// Reset the game on Again! click
+document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  randomNumber = Math.trunc(Math.random() * 20) + 1;
+
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = '';
+
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
 });
