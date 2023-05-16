@@ -1,7 +1,6 @@
 'use strict';
 
 const randomNumber = Math.trunc(Math.random() * 20) + 1;
-document.querySelector('.number').textContent = randomNumber;
 let score = 20;
 
 // Handle user guessed number input
@@ -16,9 +15,9 @@ document.querySelector('.check').addEventListener('click', function () {
     // When player wins
   } else if (guess === randomNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number!';
+    document.querySelector('.number').textContent = randomNumber;
 
     document.querySelector('body').style.backgroundColor = '#60b347';
-
     document.querySelector('.number').style.width = '30rem';
 
     // When guess is too high
